@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Input, Menu } from 'semantic-ui-react'
+import { Nav, Container } from 'react-bootstrap'
 import '../index.css'
 
 export default class Header extends Component {
@@ -11,25 +11,23 @@ export default class Header extends Component {
     const { activeItem } = this.state
 
     return (
-      <Menu secondary>
-        <Menu.Item
-          name='Books-shop'
-          active={activeItem === 'home'}
-          onClick={this.handleItemClick}
-        />
-        <Menu.Menu position='right'>
-          <Menu.Item
-            name='total'
-            active={activeItem === 'messages'}
-            onClick={this.handleItemClick}
-          ></Menu.Item>
-          <Menu.Item
-            name='cart'
-            active={activeItem === 'friends'}
-            onClick={this.handleItemClick}
-          />
-        </Menu.Menu>
-      </Menu>
+      <Container className="headerWrapper">
+        <Nav variant="pills" className="filterBar">
+          <Nav className="justify-content-start">
+            <Nav.Item>
+              <Nav.Link eventKey="Books-shop">Books-shop</Nav.Link>
+            </Nav.Item>
+          </Nav>
+        </Nav>
+        <Nav className="justify-content-center">
+          <Nav.Item >
+            <Nav.Link eventKey="Total">Total</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="Cart">Cart</Nav.Link>
+          </Nav.Item>
+        </Nav>
+      </Container>
     )
   }
 }

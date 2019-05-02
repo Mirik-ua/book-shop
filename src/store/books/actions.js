@@ -1,6 +1,6 @@
-export const ADD_TODO = 'ADD_TODO'
+export const ADD_BOOKS = 'ADD_BOOKS'
 
 export const setBooks = books => ({
-  type: ADD_TODO,
+  type: ADD_BOOKS,
   payload: books
 })
