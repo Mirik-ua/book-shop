@@ -17,7 +17,7 @@ export default class Books extends Component {
       <div className="container">
         <Card.Group itemsPerRow={4} className='containerPringBooks'>
           {
-            !this.props.isReady  ? <h4>loading...</h4> :
+            !this.props.isReady ? <h4>loading...</h4> :
             this.props.books.map( (book, index) => {
               return(
                 <BookCard key={index} {...book}/>

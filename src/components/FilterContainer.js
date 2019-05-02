@@ -6,13 +6,7 @@ import { filterBooks } from '../store/filter/actions'
 class FilterContainer extends Component {
   render() {
     return (
-      <div className="container">
-        <Filter
-          filterBy={this.props.filterBy}
-          filterBooks={this.props.filterBooks}
-          books={this.props.books}
-        />
-      </div>
+        <Filter filterBooks={this.props.filterBooks} />
     );
   }
 }
@@ -24,6 +18,5 @@ const putStateToProps = state => {
 const putDispatchToProps = {
   filterBooks: filterBooks
 }
-
 
 export default connect(putStateToProps, putDispatchToProps)(FilterContainer)

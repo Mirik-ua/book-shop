@@ -4,14 +4,15 @@ import { Nav } from 'react-bootstrap'
 
 export default class Filter extends Component {
 
-  handleItemClick = async event => await this.props.filterBooks(event.target.textContent);
-
+handleItemClick = async event => {
+  await this.props.filterBooks(event.target.textContent);
+}
 
   render() {
     return (
-      <Nav variant="pills" defaultActiveKey="/all" className="filterBar">
+      <Nav variant="pills" defaultActiveKey="/All" className="filterBar">
         <Nav.Item>
-          <Nav.Link href="/all" onClick={this.handleItemClick}>All</Nav.Link>
+          <Nav.Link href="/All" onClick={this.handleItemClick}>All</Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey="Popular" onClick={this.handleItemClick}>Popular</Nav.Link>

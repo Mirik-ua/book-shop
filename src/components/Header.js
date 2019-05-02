@@ -3,13 +3,7 @@ import { Nav, Container } from 'react-bootstrap'
 import '../index.css'
 
 export default class Header extends Component {
-  state = { activeItem: 'home' }
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
   render() {
-    const { activeItem } = this.state
-
     return (
       <Container className="headerWrapper">
         <Nav variant="pills" className="filterBar">

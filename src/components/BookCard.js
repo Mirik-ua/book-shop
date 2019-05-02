@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
 import '../index.css'
+
 export default class BookCard extends Component{
   render(){
     return(
