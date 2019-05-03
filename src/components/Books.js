@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../index.css'
 import axios from 'axios'
 import { Card, Icon, Image } from 'semantic-ui-react'
 import BookCard from './BookCard'

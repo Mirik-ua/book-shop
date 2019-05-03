@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
-import '../index.css'
 import { Nav } from 'react-bootstrap'
+import { Grid , Input } from 'semantic-ui-react'
+import '../index.css'
 
 export default class Filter extends Component {
 
-handleItemClick = async event => {
-  await this.props.filterBooks(event.target.textContent);
-}
+  handleItemClick = async event => {
+    await this.props.filterBooks(event.target.textContent);
+  }
+  handleChange = event => {
+    this.props.setSearchQuery(event.target.value)
+  }
 
   render() {
     return (
@@ -26,6 +30,16 @@ handleItemClick = async event => {
         <Nav.Item>
           <Nav.Link eventKey="Author" onClick={this.handleItemClick}>Author</Nav.Link>
         </Nav.Item>
+          <Grid>
+            <Grid.Column width={6}>
+              <Input
+                icon="search"
+                placeholder="Search..."
+                value={this.props.searchQuery}
+                onChange={this.handleChange}
+              />
+            </Grid.Column>
+          </Grid>
       </Nav>
     )
   }

@@ -1,10 +1,8 @@
 import { ADD_BOOKS } from './actions'
-import { FILTER } from '../filter/actions'
 
 const initialState = {
  books : [],
  isReady : false,
- filterBy: "all"
 }
 
 export const booksReducers = (state = initialState, action) => {
@@ -14,11 +12,6 @@ export const booksReducers = (state = initialState, action) => {
         ...state,
         books : action.payload,
         isReady: true
-      }
-    case FILTER:
-      return {
-        ...state,
-        filterBy : action.payload,
       }
   }
   return state

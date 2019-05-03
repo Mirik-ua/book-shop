@@ -17,10 +17,7 @@ export const cartReducers = (state = initialState, action) => {
       case REMOTE_BOOK_IN_CART:
       return {
         ...state,
-        cart : [
-          ...state.cart,
-          action.payload
-        ]
+        cart : state.cart.filter( o => o.id != action.payload)
       }
   }
   return state
